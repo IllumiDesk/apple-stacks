@@ -1,6 +1,6 @@
 [![Test Docker Image Status](https://github.com/illumidesk/docker-stacks/workflows/Test%20and%20Build/badge.svg)](https://github.com/illumidesk/docker-stacks/actions?query=branch%3Amain+workflow%3A%22Test+and+Build%22)
 
-# IllumiDesk Docker Stacks
+# IllumiDesk Apple Stacks
 
 Dockerfiles and related assets for IllumiDesk's workspace images. The purpose of this repo is to provide a template repo for IllumiDesk customer-centric images. To create a new customer-centric repo, click on the Use this Template button and confirm the repo name.
 
@@ -31,7 +31,7 @@ list of options.
 For example running:
 
 ```bash
-make OWNER=foo TAG=mytag build/illumidesk-notebook
+make OWNER=foo TAG=mytag build/apple-notebook
 ```
 
 Would create the image `foo/illumides-notebook:mytag`. More advanced options are available with the `DARGS`
@@ -51,7 +51,7 @@ make dev
 Or:
 
 ```bash
-docker run -p 8888:8888 illumidesk/illumidesk-notebook:latest
+docker run -p 8888:8888 illumidesk/apple-notebook:latest
 ```
 
 Then, navigate to `http://127.0.0.1:8888` to access your Jupyter Notebook server.
