@@ -4,6 +4,10 @@
 
 Dockerfiles and related assets for IllumiDesk's workspace images for the `Apple`.
 
+## What do these images contain?
+
+Everything from the [jupyter/datascience-notebook](https://github.com/jupyter/docker-stacks/tree/master/datascience-notebook) plus [PyTorch](https://pytorch.org/).
+
 ## Pre Requisits
 
 - [Docker](https://docs.docker.com/get-docker/)
@@ -49,7 +53,7 @@ make test
 
 ## Build Mechanism
 
-1. Build and tag the base image or all images at once. Use the `TAG` argument to add your custom tag. The `TAG` argument defaults to `latest` if not specified.
+1. Build and tag the base image or all images at once. Use the `TAG` argument to add your custom tag. The `TAG` argument defaults to `python-3.9.5` if not specified.
 
 Build all images:
 
