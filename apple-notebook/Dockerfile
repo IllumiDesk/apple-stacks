@@ -18,6 +18,13 @@ RUN mamba env update --prefix ./env --file /tmp/environment.yml
 # pip + conda
 RUN python3 -m pip install -r /tmp/requirements.txt
 
+# PyTorch https://pytorch.org/get-started/locally/
+RUN pip3 install \
+  torch==1.10.0+cpu \
+  torchvision==0.11.1+cpu \
+  torchaudio==0.10.0+cpu \
+  -f https://download.pytorch.org/whl/cpu/torch_stable.html
+
 # install nbgrader and then disable all extensions by default
 RUN jupyter nbextension install --symlink --sys-prefix --py nbgrader --overwrite \
  && jupyter nbextension disable --sys-prefix --py nbgrader \
