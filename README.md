@@ -1,6 +1,6 @@
 [![Github actions badge](https://github.com/illumidesk/apple-stacks/actions/workflows/docker.yaml/badge.svg)](https://github.com/illumidesk/apple-stacks/actions/workflows/docker.yaml "Docker images build status")
 
-# Apple Stacks
+# IllumiDesk Apple Stacks
 
 Dockerfiles and related assets for IllumiDesk's workspace images for the `Apple`.
 

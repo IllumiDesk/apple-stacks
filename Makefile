@@ -13,8 +13,8 @@ VENV_ACTIVATE=. ${VENV_BIN}/activate
 PYTHON=${VENV_BIN}/python3
 
 # Need to list the images in build dependency order
-ALL_STACKS:=illumidesk-notebook \
-	grader-notebook
+ALL_STACKS:=apple-notebook \
+	apple-grader
 
 ALL_IMAGES:=$(ALL_STACKS)
 
@@ -24,9 +24,9 @@ HADOLINT="${HOME}/hadolint"
 help:
 # http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
 # http://github.com/jupyter/docker-stacks
-	@echo "illumidesk/docker-stacks"
+	@echo "illumidesk/apple-stacks"
 	@echo "====================="
-	@echo "Replace % with a stack directory name (e.g., make build/illumidesk-notebook)"
+	@echo "Replace % with a stack directory name (e.g., make build/apple-notebook)"
 	@echo
 	@grep -E '^[a-zA-Z0-9_%/-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 

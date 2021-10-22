@@ -1,5 +1,5 @@
 ARG TAG=python-3.9.5
-ARG BASE_IMAGE=illumidesk/illumidesk-notebook
+ARG BASE_IMAGE=illumidesk/apple-notebook
 
 FROM $BASE_IMAGE:$TAG
 
@@ -16,10 +16,7 @@ RUN jupyter nbextension enable --sys-prefix create_assignment/main \
 RUN jupyter nbextension disable --sys-prefix assignment_list/main --section=tree
 
 # install and activate the async-nbgrader and formgradernext extensions
-RUN jupyter nbextension install --sys-prefix --py formgradernext --overwrite \
- && jupyter nbextension enable --sys-prefix --py formgradernext \
- && jupyter serverextension enable --sys-prefix --py formgradernext \
- && jupyter serverextension enable --sys-prefix --py async_nbgrader
+RUN jupyter serverextension enable --sys-prefix --py async_nbgrader
 
 # install and activate the async-nbgrader extensions
 RUN jupyter nbextension install --sys-prefix --py async_nbgrader --overwrite \
