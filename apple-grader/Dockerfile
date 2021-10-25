@@ -9,14 +9,12 @@ ENV NB_GID=100
 
 # enable nbgrader's create assignment and formgrader extensions
 RUN jupyter nbextension enable --sys-prefix create_assignment/main \
- && jupyter serverextension enable --sys-prefix nbgrader.server_extensions.formgrader \
- && jupyter serverextension enable --sys-prefix nbgrader.server_extensions.course_list
+ && jupyter nbextension enable --sys-prefix formgrader/main --section=tree \
+ && jupyter serverextension enable --sys-prefix nbgrader.server_extensions.formgrader
 
 # disable the assignment extension, since graders don't need it
-RUN jupyter nbextension disable --sys-prefix assignment_list/main --section=tree
-
-# install and activate the async-nbgrader and formgradernext extensions
-RUN jupyter serverextension enable --sys-prefix --py async_nbgrader
+RUN jupyter serverextension disable --sys-prefix nbgrader.server_extensions.assignment_list \
+ && jupyter nbextension disable --sys-prefix assignment_list/main --section=tree
 
 # install and activate the async-nbgrader extensions
 RUN jupyter nbextension install --sys-prefix --py async_nbgrader --overwrite \
