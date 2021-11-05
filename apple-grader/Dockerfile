@@ -7,7 +7,6 @@ FROM $BASE_IMAGE:$TAG
 ENV NB_UID=10001
 ENV NB_GID=100
 
-
 # enable nbgrader's create assignment and formgrader extensions
 RUN jupyter nbextension enable --sys-prefix create_assignment/main \
  && jupyter nbextension enable --sys-prefix formgrader/main --section=tree \
